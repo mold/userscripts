@@ -4,6 +4,7 @@
 // @version      1.0
 // @description  Removes the annoying side share buttons
 // @author       dkd
+// @downloadURL  https://raw.githubusercontent.com/mold/userscripts/master/avclub-sideshare-begone.js
 // @match        http://www.avclub.com/*
 // @grant        none
 // ==/UserScript==

@@ -3,7 +3,8 @@
 // @namespace dkdscripts
 // @description copy dat shit and close dat tab
 // @include http://piclair.com/*
-// @version 2
+// @version 2.0
+// @downloadURL https://raw.githubusercontent.com/mold/userscripts/master/piclair-autocopy.js
 // @grant GM_setClipboard
 // @run-at document-end
 // ==/UserScript==
