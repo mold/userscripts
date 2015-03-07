@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         AvclubSideshareBegone
 // @namespace    dkdscripts
-// @version      1.1
+// @version      1.2
 // @description  Removes the annoying side share buttons
 // @author       dkd
 // @downloadURL  https://raw.githubusercontent.com/mold/userscripts/master/avclub-sideshare-begone.js
@@ -10,5 +10,5 @@
 // ==/UserScript==
 
 var w;
-if((w = document.getElementsByClassName("sideshare-wrapper sticky-active")[0]))
+if((w = document.getElementsByClassName("sideshare-wrapper")[0]))
     w.remove();
