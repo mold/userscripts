@@ -7,6 +7,7 @@
 // @downloadURL https://raw.githubusercontent.com/mold/userscripts/master/piclair-autocopy.js
 // @grant GM_setClipboard
 // @run-at document-end
+// @author       dkd
 // ==/UserScript==
 var src, close=true;
 window.addEventListener("keydown", function(e){
