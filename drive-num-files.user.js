@@ -4,7 +4,7 @@
 // @version      1.0
 // @description  Shows how many items are currently displayed in drive (updates 1/s)
 // @author       dkd
-// @downloadURL  --
+// @downloadURL  https://github.com/mold/userscripts/raw/master/drive-num-files.user.js
 // @match        https://drive.google.com/*
 // @grant        none
 // ==/UserScript==
