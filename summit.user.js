@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Summit
 // @namespace    dkdscripts
-// @version      0.1
+// @version      0.2
 // @description  Summit booking for pros
 // @author       johntu
 // @downloadURL  https://github.com/mold/userscripts/raw/master/summit.user.js
