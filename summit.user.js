@@ -4,7 +4,7 @@
 // @version      0.2
 // @description  Summit booking for pros
 // @author       johntu
-// @downloadURL  https://github.com/mold/userscripts/raw/master/summit.user.js
+// @downloadURL  https://raw.githubusercontent.com/mold/userscripts/master/summit.user.js
 // @match        http://217.70.37.13/brp/mesh/myPage.action*
 // @grant        none
 // ==/UserScript==
