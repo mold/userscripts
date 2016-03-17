@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Summit
 // @namespace    dkdscripts
-// @version      0.2
+// @version      0.2.1
 // @description  Summit booking for pros
 // @author       johntu
 // @downloadURL  https://raw.githubusercontent.com/mold/userscripts/master/summit.user.js
@@ -286,7 +286,7 @@ if (welcomeEl && welcomeEl.html().search("Välkommen") != -1) {
 
                         var prevFree = roomBooked[roomIndex[j - 1]] == 0;
                         // bookingCell will remove table cells for 'rowspan' rows
-                        if (e.hasClass("bookingCell")) {
+                        if (e.hasClass("bookedCell") || e.hasClass("bookingCell")) {
                             roomBooked[roomIndex[j - 1]] = parseInt(e.attr("rowspan"));
                             _roomIndex.splice(_roomIndex.indexOf(roomIndex[j - 1]), 1);
                         }
@@ -294,7 +294,14 @@ if (welcomeEl && welcomeEl.html().search("Välkommen") != -1) {
                         var time = roomTimes[roomIndex[j - 1]];
                         // links are free times
                         var a = e.find("a");
-                        if (a.length) {
+                        // bookedCell and bookingCell are non-free times
+                        // scheduleCell is non-free only if it has no link element
+                        if (prevFree && (e.hasClass("bookedCell") || e.hasClass("bookingCell") || (e.hasClass("scheduleCell") && !a.length))) {
+                            if (time && !time.end) {
+                                time.end = date;
+                                roomTimes[roomIndex[j - 1]] = null;
+                            }
+                        } else if (a.length) {
                             if (!time) {
                                 var room = times[rooms[roomIndex[j - 1]]];
                                 time = {};
@@ -302,12 +309,6 @@ if (welcomeEl && welcomeEl.html().search("Välkommen") != -1) {
                                 room.push(time);
                                 time.start = date;
                                 time.resource = a.attr("href").match(/resource0=([0-9]+)/)[1];
-                            }
-                            // bookingCell or scheduleCell are non-free times
-                        } else if (prevFree && (e.hasClass("bookingCell") || e.hasClass("scheduleCell"))) {
-                            if (time && !time.end) {
-                                time.end = date;
-                                roomTimes[roomIndex[j - 1]] = null;
                             }
                         }
                     }
