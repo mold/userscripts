@@ -83,4 +83,11 @@
 		}
 	});
 
+	window.addEventListener("mousedown", function(evt) {
+		if(evt.button === 2){
+			// right click opens context menu
+			toggleFullscreen(false);
+		}
+	});
+
 })();
