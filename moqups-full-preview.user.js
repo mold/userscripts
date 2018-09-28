@@ -1,11 +1,12 @@
 // ==UserScript==
 // @name         Moqups Full Preview
 // @namespace    dkdscripts
-// @version      1.1.2
+// @version      1.1.3
 // @description  Press Ctrl+F11 to hide all menus and go FULL PREVIEW
 // @author       dkd
 // @downloadURL  https://github.com/mold/userscripts/raw/master/moqups-full-preview.user.js
 // @match        https://app.moqups.com/*
+// @require      https://code.jquery.com/jquery-3.3.1.min.js
 // @grant        none
 // ==/UserScript==
 
