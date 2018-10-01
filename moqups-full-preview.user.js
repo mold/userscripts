@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Moqups Full Preview
 // @namespace    dkdscripts
-// @version      1.1.3
-// @description  Press Ctrl+F11 to hide all menus and go FULL PREVIEW
+// @version      1.2.0
+// @description  Press Ctrl+F11 (or Shift+Alt+F) to hide all menus and go FULL PREVIEW
 // @author       dkd
 // @downloadURL  https://github.com/mold/userscripts/raw/master/moqups-full-preview.user.js
 // @match        https://app.moqups.com/*
@@ -60,6 +60,8 @@
 				transition: transitionDuration + "ms all",
 				top: 0,
 			});
+
+            $(":focus").blur();
 		} else {
 			mainStage.css(mainStage.origCSS);
 			stageWrapper.css(stageWrapper.origCSS);
@@ -74,8 +76,10 @@
 	}
 
 	window.addEventListener("keydown", function(evt) {
-		// Ctrl+F11
-		if (evt.keyCode === 122 && evt.ctrlKey) {
+		// Ctrl+F11 or Alt+Shift+F
+		if ((evt.keyCode === 122 && evt.ctrlKey) ||
+            (evt.keyCode === 70 && evt.altKey && evt.shiftKey)) {
+            evt.preventDefault();
 			toggleFullscreen();
 		}
 		// Ctrl+F
